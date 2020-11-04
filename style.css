@@ -1,0 +1,50 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: #fff;
+}
+
+.container {
+	box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+	height: 500px;
+	width: 500px;
+	border-radius: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid red;
+}
+
+.parent {
+	display: flex;
+	flex-wrap: no-wrap;
+}
+
+.item {
+	width: 50%;
+	height: 50px;
+	background-color: rgba(0, 0, 0, 0.1);
+	margin: 0px 2px;
+	line-height: 50px;
+	text-align: center;
+	font-weight: bold;
+	font-family: "Courier New";
+	font-size: 12px;
+}
+
+.item:hover {
+	cursor: pointer;
+}
+
+.item-selected {
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.row {
+	background-color: salmon;
+	box-sizing: content-box;
+}
