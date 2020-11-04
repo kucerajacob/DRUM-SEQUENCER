@@ -1,32 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
 }
 
 html {
+	font-family: 'Lexend Zetta', sans-serif;
 	background-color: #fff;
 }
 
 .container {
-	box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-	height: 500px;
-	width: 500px;
-	border-radius: 20px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 35px 100px rgba(0, 0, 0, 0.2);
+	height: 270px;
+	width: 920px;
+	border-radius: 11px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	border: 1px solid red;
+	padding: 12px 20px;
+	display: flex;
+	border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.parent {
+.sequencer {
+	display: flex;
+	height: 270px;
+	width: 840px;
+}
+
+#p0 {
+	margin-top: 9px;
+	width: 160px;
+	padding-left: 2px;
+	padding-right: 22px;
+}
+
+.drum-name {
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: -0.5px;
+	line-height: 58px;
+	padding: 0px 36px 0px 16px;
+	border-radius: 6px;
+	margin-bottom: 4px;
+	background-color: #fff;
+	color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.d1, .d2, .d3, .d4, .d5, .d6, .d7, .d8, .d9, .d10, .d11, .d12, .d13, .d14, .d15, .d16 {
+	background-color: rgba(0, 0, 0, 0);
+	height: 100%;
+	width: 50%;
+	margin: 5px 2px;
+	display: inline-block;
+}
+
+.sample {
+	background-color: rgba(0, 0, 0, 0.1);
+	margin: 4px 0px;
+	display: block;
+	height: 60px;
+	border-radius: 6px;
+}
+
+.sample:hover {
+	cursor: pointer;
+}
+
+.row-highlight {
+	background-color: rgba(28, 29, 28, 0.16);
+}
+
+.item-selected {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+#d-split {
+	margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .parent, .parent2 {
+	margin-top: 10px;
 	display: flex;
 	flex-wrap: no-wrap;
 }
 
-.item {
+.kick, .clap {
 	width: 50%;
-	height: 50px;
+	height: 40px;
 	background-color: rgba(0, 0, 0, 0.1);
 	margin: 0px 2px;
 	line-height: 50px;
@@ -34,17 +118,18 @@ html {
 	font-weight: bold;
 	font-family: "Courier New";
 	font-size: 12px;
+	border-radius: 12px;
+	box-sizing: border-box;
 }
 
-.item:hover {
+.kick:hover, .clap:hover {
 	cursor: pointer;
 }
 
 .item-selected {
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: salmon;
 }
 
 .row {
-	background-color: salmon;
-	box-sizing: content-box;
-}
+	background-color: rgba(0, 0, 0, 0.25);
+} */
