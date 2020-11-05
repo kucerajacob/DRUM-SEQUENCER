@@ -11,9 +11,25 @@
 	<div class="container">
 		<div id="p0">
 			<p class="drum-name">KICK</p>
-			<p class="drum-name">SNARE</p>
+			<p class="drum-name">CLAP</p>
 			<p class="drum-name">HIHAT</p>
 			<p class="drum-name">RIM</p>
+		</div>
+
+		<div id="controls">
+			<div id="controls-left-side">
+				<div class="sampler" id="sampler1">Q</div>
+				<div class="sampler" id="sampler2">W</div>
+				<div class="sampler" id="sampler3">E</div>
+				<div class="sampler" id="sampler4">R</div>
+			</div>
+
+			<div id="controls-right-side">
+				<p id="bpm">130 BPM</p>
+				<input type="range" min="30" max="200" value="130" id="bpm-slider">
+	
+				<p id="clear-track">CLEAR</p>
+			</div>
 		</div>
 
 		<div class="sequencer">
@@ -23,7 +39,7 @@
 				<div class="sample" data-sample="hihat.wav"></div>
 				<div class="sample" data-sample="rim.wav"></div>
 			</div>
-	
+
 			<div class="d2">
 				<div class="sample" data-sample="kick.wav"></div>
 				<div class="sample" data-sample="clap.wav"></div>

@@ -1,9 +1,13 @@
 const rows = document.querySelector(".sequencer").children;
 
-const kick = new Audio("/audio/kick.wav"),
-	clap = new Audio("/audio/clap.wav"),
-	hihat = new Audio("/audio/hihat.wav"),
-	rim = new Audio("/audio/rim.wav");
+const kick = new Audio("/audio/kick.mp3"),
+	clap = new Audio("/audio/clap.mp3"),
+	hihat = new Audio("/audio/hihat.mp3"),
+	rim = new Audio("/audio/rim.mp3"),
+	Q = new Audio("/audio/Q.mp3"),
+	W = new Audio("/audio/W.mp3"),
+	E = new Audio("/audio/E.mp3"),
+	R = new Audio("/audio/R.mp3");
 
 const item = document.querySelectorAll(".sample");
 
@@ -18,10 +22,83 @@ item.forEach(function (el) {
 	}
 });
 
-var i = -1;
+// Clear button functionality
+document.getElementById("clear-track").onclick = function () {
+	[].forEach.call(item, function (el) {
+		el.classList.remove("item-selected");
+	});
+}
 
-function rowLoop() {
-	setInterval(function () {
+// Sample pad key press functionality
+document.onkeydown = function (e) {
+	e = e || window.event;
+
+	switch (e.key) {
+		case "q":
+			Q.load();
+			Q.play();
+			document.getElementById("sampler1").classList.add("pressed");
+			break;
+		case "w":
+			W.load();
+			W.play();
+			document.getElementById("sampler2").classList.add("pressed");
+			break;
+		case "e":
+			E.load();
+			E.play();
+			document.getElementById("sampler3").classList.add("pressed");
+			break;
+		case "r":
+			R.load();
+			R.play();
+			document.getElementById("sampler4").classList.add("pressed");
+			break;	
+	}
+}
+
+document.onkeyup = function (e) {
+	e = e || window.event;
+
+	switch (e.key) {
+		case "q":
+			// Q.pause();
+			// Q.currentTime = 0;
+			document.getElementById("sampler1").classList.remove("pressed");
+			break;
+		case "w":
+			// W.pause();
+			// W.currentTime = 0;
+			document.getElementById("sampler2").classList.remove("pressed");
+			break;
+		case "e":
+			// E.pause();
+			// E.currentTime = 0;
+			document.getElementById("sampler3").classList.remove("pressed");
+			break;
+		case "r":
+			// R.pause();
+			// R.currentTime = 0;
+			document.getElementById("sampler4").classList.remove("pressed");
+			break;	
+	}
+}
+
+// BPM slider
+const bpmSlider = document.getElementById("bpm-slider");
+const bpmText = document.getElementById("bpm");
+var BPM = bpmSlider.value;
+
+bpmText.innerHTML = bpmSlider.value + " BPM";
+
+bpmSlider.oninput = function () {
+	bpmText.innerHTML = this.value + " BPM";
+	BPM = parseInt(((60 / bpmSlider.value) * 1000) / 4);
+}
+
+let i = -1;
+rowLoop = () => {
+	setTimeout(function () {
 		i++;
 
 		if (i === rows.length) {
@@ -46,22 +123,29 @@ function rowLoop() {
 
 		document.querySelectorAll(".d" + (i + 1)).forEach(function (bruh) {
 			if (bruh.childNodes[1].classList.contains("row-highlight") && bruh.childNodes[1].classList.contains("item-selected")) {
+				kick.load();
 				kick.play();
 			}
 
 			if (bruh.childNodes[3].classList.contains("row-highlight") && bruh.childNodes[3].classList.contains("item-selected")) {
+				clap.load();
 				clap.play();
 			}
 
 			if (bruh.childNodes[5].classList.contains("row-highlight") && bruh.childNodes[5].classList.contains("item-selected")) {
+				hihat.load();
 				hihat.play();
 			}
 
 			if (bruh.childNodes[7].classList.contains("row-highlight") && bruh.childNodes[7].classList.contains("item-selected")) {
+				rim.load();
 				rim.play();
 			}
 		});
-	}, 150);
+
+		rowLoop();
+	}, BPM);
 }
 
+// Call rowLoop() function
 rowLoop();
