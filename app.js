@@ -1,13 +1,13 @@
 const rows = document.querySelector(".sequencer").children;
 
-const kick = new Audio("/audio/kick.mp3"),
-	clap = new Audio("/audio/clap.mp3"),
-	hihat = new Audio("/audio/hihat.mp3"),
-	rim = new Audio("/audio/rim.mp3"),
-	Q = new Audio("/audio/Q.mp3"),
-	W = new Audio("/audio/W.mp3"),
-	E = new Audio("/audio/E.mp3"),
-	R = new Audio("/audio/R.mp3");
+const kick = new Audio("https://raw.githubusercontent.com/kucerajacob/DRUM-SEQUENCER/master/audio/kick.mp3"),
+	clap = new Audio("https://raw.githubusercontent.com/kucerajacob/DRUM-SEQUENCER/master/audio/clap.mp3"),
+	hihat = new Audio("https://raw.githubusercontent.com/kucerajacob/DRUM-SEQUENCER/master/audio/hihat.mp3"),
+	rim = new Audio("https://raw.githubusercontent.com/kucerajacob/DRUM-SEQUENCER/master/audio/rim.mp3"),
+	Q = new Audio("https://raw.githubusercontent.com/kucerajacob/DRUM-SEQUENCER/master/audio/Q.mp3"),
+	W = new Audio("https://raw.githubusercontent.com/kucerajacob/DRUM-SEQUENCER/master/audio/W.mp3"),
+	E = new Audio("https://raw.githubusercontent.com/kucerajacob/DRUM-SEQUENCER/master/audio/E.mp3"),
+	R = new Audio("https://raw.githubusercontent.com/kucerajacob/DRUM-SEQUENCER/master/audio/R.mp3");
 
 const item = document.querySelectorAll(".sample");
 
