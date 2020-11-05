@@ -21,7 +21,7 @@ item.forEach(function (el) {
 		}
 	}
 });
-
+//fucker
 // Clear button functionality
 document.getElementById("clear-track").onclick = function () {
 	[].forEach.call(item, function (el) {
